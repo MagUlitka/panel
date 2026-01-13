@@ -58,9 +58,10 @@ export default function App() {
           'WorkSans-Regular': require('./assets/fonts/WorkSans-Regular.ttf'),
           'WorkSans-Medium': require('./assets/fonts/WorkSans-Medium.ttf'),
         });
-        setFontsLoaded(true);
       } catch (e) {
         console.error('Error loading fonts:', e);
+      } finally {
+        setFontsLoaded(true); // <--- MOVED HERE: Runs whether it succeeds or fails
       }
     };
 
